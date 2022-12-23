@@ -32,6 +32,7 @@ class PostController extends Controller
             'category' => 'required',
             'tags' => 'required',
             'slug' => [
+				'unique:posts',
                 'required',
                 function ($attribute, $value, $fail) {
                     $value = $this->maybe_add_slash_at_first($value);
