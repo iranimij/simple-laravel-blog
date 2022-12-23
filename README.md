@@ -1,11 +1,21 @@
 ## How to install
 
-Please just clone the project and run the below command : 
+After cloning the project you need to first run the below command for installing JS required packages: 
 
+```php
+npm install
+```
+
+after that we need to install PHP packages by the below command : 
+
+```php
+composer install
+```
+
+After that we can build the project by below command.
 ```php
 npm run build
 ```
-
 
 ### Connecting the database
 
@@ -26,4 +36,10 @@ Now you can create the tables by below command :
 
 ```php
 php artisan migrate
+```
+
+At last we need to create the App Key be the below command : 
+
+```php
+php artisan key:generate
 ```
