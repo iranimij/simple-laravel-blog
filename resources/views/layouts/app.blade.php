@@ -7,8 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    @if( empty( $post ) )
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    @endif
+    @if( ! empty( $post ) )
+        <title>{{ $post->title }}</title>
+    @endif
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">

@@ -56,12 +56,9 @@ function ShowNews() {
         if ( i > 3) {
             return;
         }
-        console.log('post343434', post);
-        console.log('post343434', post);
-        console.log('post.is_selected', post.is_selected);
 
         if (post?.is_selected === 1) {
-            selectedNews.push(<div><a href={mainUrl + post.slug}>{ post.title }</a></div>);
+            selectedNews.push(<div key={post.id}><a target="_blank" href={mainUrl + post.slug}>{ post.title }</a></div>);
             }
         }
     )
@@ -80,6 +77,7 @@ function ShowNews() {
                         {categories.map((category) => (
                             <span
                                 className="btn btn-outline-primary m-2 grutto-landing-category-button"
+                                key={category.id}
                                 data-id={category.id}
                                 onClick={(e) => OnCatBtnClicked(e)}
                             >
@@ -92,7 +90,7 @@ function ShowNews() {
                     <div className="col-md-12">
                         <div className="card mb-2">
                             <div className="card-header d-flex justify-content-between">
-                                <span>Title: Selected news</span>
+                                <span><strong>Selected news</strong></span>
                             </div>
                             <div className="d-flex justify-content-between">
                                 <div className="card-body">
@@ -103,7 +101,7 @@ function ShowNews() {
                     </div>
                 </div>
                 {news.map((post) => (
-                    <div className="col-md-12">
+                    <div className="col-md-12" key={post.id}>
                         <div className="card mb-2">
                             <div className="card-header d-flex justify-content-between">
                                 <span>Title: <a target="_blank" href={mainUrl + post.slug}>{post.title}</a></span>
